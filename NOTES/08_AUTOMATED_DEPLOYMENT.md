@@ -52,7 +52,7 @@ cd node-react-rbac
 #### Step 1: Generate SSH Key on the Droplet
 ```bash
 # Generate SSH key on the droplet
-ssh-keygen -t ed25519 -C "droplet-github-YOUR_PROJECT_NAME"  # YOUR_PROJECT_NAME --> To avaoid over writing prompt like --> /root/.ssh/id_ed25519 already exists. Overwrite (y/n)? y
+ssh-keygen -t ed25519 -C "droplet-github_OR_ANY_STRING"  -f /root/.ssh/id_ed25519_droplet_YOUR_PROJECT_NAME  # YOUR_PROJECT_NAME --> To avaoid over writing prompt like --> /root/.ssh/id_ed25519 already exists. Overwrite (y/n)? y
 
 # Press Enter for all prompts (default location, no passphrase)
 ```
@@ -60,7 +60,7 @@ ssh-keygen -t ed25519 -C "droplet-github-YOUR_PROJECT_NAME"  # YOUR_PROJECT_NAME
 #### Step 2: Copy the Public Key
 ```bash
 # Display the public key
-cat ~/.ssh/id_ed25519.pub
+cat ~/.ssh/id_ed25519_droplet_YOUR_PROJECT_NAME.pub
 
 # Copy the entire output (starts with ssh-ed25519...) 👉 Copy the ENTIRE line:
 # ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICt0+e1KqtSNKgnsW6lHxQhd3fHjxUbOvr0c6W/bC3Bc droplet-github
@@ -160,7 +160,7 @@ docker compose ps
 ```bash
 # On your local machine(In WSL), ✅✅if you don't have SSH key✅✅
 # ed25519 is more secure and faster than RSA
-ssh-keygen -t ed25519 -C "github-actions-YOUR_PROJECT_NAME" # YOUR_PROJECT_NAME --> To avaoid over writing prompt like --> /home/ganeshsurna/.ssh/id_ed25519 already exists. Overwrite (y/n)? 
+ssh-keygen -t ed25519 -C "github-actions-OR_ANY_STRING" -f /home/ganeshsurna/.ssh/id_ed25519_YOUR_PROJECT_NAME # YOUR_PROJECT_NAME --> To avaoid over writing prompt like --> /home/ganeshsurna/.ssh/id_ed25519 already exists. Overwrite (y/n)? 
 
 # When prompted:
 # - Press Enter to accept default location (~/.ssh/id_ed25519)
@@ -176,7 +176,7 @@ ssh-keygen -t ed25519 -C "github-actions-YOUR_PROJECT_NAME" # YOUR_PROJECT_NAME 
 ssh-copy-id root@139.59.6.209
 
 # Or manually:
-cat ~/.ssh/id_ed25519.pub | ssh root@139.59.6.209 "mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys"
+cat ~/.ssh/id_ed25519_YOUR_PROJECT_NAME.pub | ssh root@139.59.6.209 "mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys"
 ```
 
 ### 2.3 Test SSH Connection
@@ -195,7 +195,7 @@ exit
 
 ```bash
 # On your local machine (WSL)
-cat ~/.ssh/id_ed25519
+cat ~/.ssh/id_ed25519_YOUR_PROJECT_NAME
 
 # The above command will print something like:
 # -----BEGIN OPENSSH PRIVATE KEY-----
