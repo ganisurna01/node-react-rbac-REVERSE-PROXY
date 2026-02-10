@@ -4,7 +4,9 @@
 4. docker-compose.yml (root folder)
 5. .github/workflows/deploy.yml (root folder)
 6. 08_AUTOMATED_DEPLOYMENT.md (NOTES)
-7. deploy.sh, 07_MANUAL_DEPLOYMENT.md
+7. DOCKER_COMPOSE_DEPLOYMENT_STEPS.md
+8. K8s_DEPLOYMENT_STEPS.md
+9. deploy.sh, 07_MANUAL_DEPLOYMENT.md
 
-8. Below is the Remote Repo - (You can see Github Actions)
+10. Below is the Remote Repo - (You can see Github Actions)
     https://github.com/Ganesh-Surna-RGUKT/node-react-rbac/actions
